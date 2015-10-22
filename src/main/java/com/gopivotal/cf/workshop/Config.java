@@ -21,7 +21,7 @@ public class Config {
     	try {
     	    return new CloudFactory().getCloud();
     	} catch ( CloudException ce ) {
-    		//	Not running in cloud environment, return null
+    		//	Not running in cloud environment, return null & null
     		return null;
     	}
     }
