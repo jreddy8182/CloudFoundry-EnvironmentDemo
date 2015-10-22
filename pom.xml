@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchemainstance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.demo</groupId>
+	<artifactId>cfintroenvironmentdemo</artifactId>
+	<version>0.0.1SNAPSHOT</version>
+
+	<name>cfintrospringmvc</name>
+	<description>Spring Boot Project for CF demo</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>springbootstarterparent</artifactId>
+		<version>1.2.2.RELEASE</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>springbootstarterweb</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>springbootstarterthymeleaf</artifactId>
+		</dependency>
+
+
+		<! Makes working with various clouds easier: >
+		<dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>springserviceconnector</artifactId>
+		    <version>0.9.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>cloudfoundryconnector</artifactId>
+		    <version>0.9.2</version>
+		</dependency>		
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>springbootstartertest</artifactId>
+            <scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<properties>
+		<!	startclass not needed when running as a WAR  >
+		<!	<startclass>com.gopivotal.cf.workshop.Application</startclass>  >		
+ 			<java.version>1.7</java.version>
+	</properties>
+
+<!  springbootmavenplugin not needed when creating a WAR >
+<! 	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>springbootmavenplugin</artifactId>
+			</plugin>
+		</plugins>
+	</build> >
+
+	<repositories>
+		<! Necessary for Spring Cloud.  Hopefully not needed after Spring Cloud version > 1 >
+		<repository>
+		    <id>org.springframework.maven.milestone</id>
+		    <name>Spring Maven Milestone Repository</name>
+		    <url>http://repo.spring.io/milestone</url>
+		</repository>
+	</repositories>
+
+	<packaging>war</packaging>
+</project>
